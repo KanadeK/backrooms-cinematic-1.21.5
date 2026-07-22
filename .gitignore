@@ -1,0 +1,15 @@
+dist/*
+!dist/.gitkeep
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+desktop.ini
+session.lock
+*.tmp
+*.log
+*.bak
+*.old
+.cache/
+.idea/
+.vscode/

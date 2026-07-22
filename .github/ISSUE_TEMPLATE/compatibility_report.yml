@@ -1,0 +1,27 @@
+name: Compatibility report
+description: Record a tested client or server compatibility result
+body:
+  - type: input
+    id: version
+    attributes: {label: Minecraft version}
+    validations: {required: true}
+  - type: input
+    id: loader
+    attributes: {label: Mod loader and version}
+  - type: textarea
+    id: mods
+    attributes: {label: Mod list}
+  - type: input
+    id: shaders
+    attributes: {label: Shader pack}
+  - type: input
+    id: priority
+    attributes: {label: Resource-pack priority}
+  - type: dropdown
+    id: side
+    attributes: {label: Environment, options: [Client, Server, Both]}
+    validations: {required: true}
+  - type: textarea
+    id: result
+    attributes: {label: Actual result}
+    validations: {required: true}

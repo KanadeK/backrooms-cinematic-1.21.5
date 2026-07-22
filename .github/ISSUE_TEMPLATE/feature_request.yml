@@ -1,0 +1,16 @@
+name: Feature request
+description: Suggest a focused improvement
+body:
+  - type: textarea
+    id: request
+    attributes: {label: Proposed feature}
+    validations: {required: true}
+  - type: textarea
+    id: relationship
+    attributes: {label: Relationship to Backrooms gameplay}
+  - type: dropdown
+    id: multiplayer
+    attributes: {label: Multiplayer impact, options: [None known, Possible, Yes]}
+  - type: textarea
+    id: assets
+    attributes: {label: New assets required and their licences}

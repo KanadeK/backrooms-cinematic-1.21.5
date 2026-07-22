@@ -1,0 +1,31 @@
+name: Bug report
+description: Report a reproducible map or installer problem
+body:
+  - type: input
+    id: minecraft
+    attributes: {label: Minecraft version, placeholder: 'Java 1.21.5'}
+    validations: {required: true}
+  - type: dropdown
+    id: mode
+    attributes: {label: Mode, options: [Single-player, Multiplayer]}
+    validations: {required: true}
+  - type: input
+    id: os
+    attributes: {label: Operating system}
+    validations: {required: true}
+  - type: textarea
+    id: mods
+    attributes: {label: Installed mods or resource-pack priority}
+  - type: input
+    id: stage
+    attributes: {label: Current task stage}
+  - type: textarea
+    id: steps
+    attributes: {label: Reproduction steps}
+    validations: {required: true}
+  - type: textarea
+    id: logs
+    attributes: {label: Redacted logs and screenshots, no UUIDs/addresses/tokens}
+  - type: dropdown
+    id: stable
+    attributes: {label: Can you reproduce it reliably?, options: [Yes, No, Unknown]}

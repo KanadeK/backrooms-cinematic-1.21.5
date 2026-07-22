@@ -1,0 +1,28 @@
+name: Validate build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/build_release.py
+      - run: python tools/validate_world.py
+      - run: python tools/verify_release.py dist/Backrooms_Java_1.21.5_v0.5.2_Integrated.zip
+      - run: python tools/generate_checksums.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Backrooms_Java_1.21.5_v0.5.2_Integrated
+          path: |
+            dist/Backrooms_Java_1.21.5_v0.5.2_Integrated.zip
+            dist/SHA256SUMS.txt
