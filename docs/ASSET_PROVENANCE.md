@@ -9,6 +9,7 @@
 | `src/resourcepack/assets/minecraft/optifine/**` | CTM configuration and texture variants | Original project work; owner declaration | KanadeK | CC BY 4.0 | Yes | CTM configuration and related original texture variants. |
 | `src/resourcepack/pack.png`, `src/world/icon.png` | Icons | Original project work; owner declaration | KanadeK | CC BY 4.0 | Yes/No unknown per file | Attribution required on redistribution. |
 | `src/world/region/*.mca`, `level.dat` | World/map design and binary world data | Original project work; owner declaration | KanadeK | CC BY 4.0 | Yes | Technical Minecraft file formats are not licensed beyond the creator's original world design. |
+| `screenshots/client-view/**`, `screenshots/world-renders/**` | Client-view captures and world renders | Project-owner supplied | KanadeK | CC BY 4.0 | No | Labels distinguish client views from `.mca`-based world renders; see `docs/SCREENSHOTS.md`. |
 | `src/datapack/backrooms_core/**`, `src/installer/**`, `tools/**`, `docs/**`, `.github/**` | Data-pack code, scripts and documentation | Original project work; owner declaration | KanadeK | MIT (`LICENSE-CODE`) | Yes | Creative assets remain covered by `LICENSE-ASSETS`. |
 
 ## Required remediation

@@ -55,9 +55,23 @@ python tools/build_release.py --allow-version-mismatch
 - Multiplayer playthrough: not tested here.
 - Performance and frame rate: not tested here.
 
-## Screenshots
+## Visual references
 
-No screenshots are published because this environment has not rendered the map in Minecraft Java 1.21.5. See [SCREENSHOTS.md](docs/SCREENSHOTS.md); only genuine F2 captures from this world with its integrated pack may be added.
+### Owner-supplied client-view captures
+
+These two images were supplied by the project owner as client-view captures. They are included as visual references, not as independent evidence of a complete client playthrough.
+
+![Pipes client view](screenshots/client-view/client-view-pipes.png)
+
+![Entity corridor client view](screenshots/client-view/client-view-entity-corridor.png)
+
+### World renders
+
+The contact sheet and its five component images were rendered directly from this project's Anvil region files using the embedded resource-pack textures and v0.5.2 photo-point coordinates. They are not AI-generated and are not Minecraft F2 screenshots.
+
+![World render contact sheet](screenshots/world-renders/preview-contact-sheet.jpg)
+
+See [screenshots documentation](docs/SCREENSHOTS.md) for exact asset types, filenames and hashes.
 
 ## Contributing and licence
 
