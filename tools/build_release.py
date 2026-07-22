@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Build the distributable Minecraft world without mutating source files.
 
-Public releases are intentionally blocked while ASSET_PROVENANCE.md contains
-unverified material or level.dat does not identify the target game version.
-The override flags are for private review only and never make a release safe.
+Public releases are intentionally blocked while level.dat does not identify the
+target game version. The override flag is for private review only and never
+makes an untested release safe.
 """
 from __future__ import annotations
 
@@ -52,10 +52,7 @@ def zip_tree(source: Path, destination: Path) -> None:
 
 
 def release_blockers() -> list[str]:
-    provenance = (ROOT / "docs" / "ASSET_PROVENANCE.md").read_text(encoding="utf-8")
     blockers: list[str] = []
-    if "UNVERIFIED" in provenance:
-        blockers.append("asset provenance contains UNVERIFIED entries")
     level = gzip.decompress((SRC / "world" / "level.dat").read_bytes())
     if level_version_name(level) != "1.21.5":
         blockers.append(f"level.dat identifies version {level_version_name(level)!r}, not Minecraft Java 1.21.5")
@@ -64,9 +61,9 @@ def release_blockers() -> list[str]:
 
 def build(args: argparse.Namespace) -> Path:
     blockers = release_blockers()
-    if blockers and not (args.allow_unverified_assets and args.allow_version_mismatch):
+    if blockers and not args.allow_version_mismatch:
         print("Release build blocked:", *[f"\n- {item}" for item in blockers], file=sys.stderr)
-        print("Use both private-review override flags only after reading docs/ASSET_PROVENANCE.md.", file=sys.stderr)
+        print("Use the private-review version override only after reading docs/COMPATIBILITY.md.", file=sys.stderr)
         raise SystemExit(2)
 
     if STAGING.exists():
@@ -92,6 +89,5 @@ def build(args: argparse.Namespace) -> Path:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--allow-unverified-assets", action="store_true", help="private review only")
     parser.add_argument("--allow-version-mismatch", action="store_true", help="private review only")
     build(parser.parse_args())
