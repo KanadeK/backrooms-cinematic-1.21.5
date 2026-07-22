@@ -1,0 +1,3 @@
+execute if score @s br_stage matches 0 if score @s br_fragments matches 3 if score @s br_radio matches 0 run tellraw @s {text:'HINT: The survey logs repeat 47–0–47. Set the first and third radio levers on; leave the middle off.',color:'green'}
+execute if score @s br_stage matches 2 if score @s br_fuse matches 1 if score @s br_breakers matches ..1 run tellraw @s {text:'HINT: Both breaker levers are on the black machine panel north of the damaged camera table.',color:'green'}
+execute if score @s br_stage matches 3 if score @s br_drawing matches 0 run tellraw @s {text:'HINT: The optional drawing is mounted on the wall opposite the observation glass.',color:'green'}

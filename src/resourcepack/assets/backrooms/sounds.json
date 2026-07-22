@@ -1,0 +1,146 @@
+{
+  "fluorescent": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/fluorescent",
+        "stream": true
+      }
+    ]
+  },
+  "distant": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/distant",
+        "stream": true
+      }
+    ]
+  },
+  "entry": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/entry",
+        "stream": true
+      }
+    ]
+  },
+  "flicker": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/flicker",
+        "stream": true
+      }
+    ]
+  },
+  "footsteps": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/footsteps",
+        "stream": true
+      }
+    ]
+  },
+  "chase": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/chase",
+        "stream": true
+      }
+    ]
+  },
+  "caught": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/caught",
+        "stream": true
+      }
+    ]
+  },
+  "fall": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/fall",
+        "stream": true
+      }
+    ]
+  },
+  "machine": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/machine",
+        "stream": true
+      }
+    ]
+  },
+  "steam": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/steam",
+        "stream": true
+      }
+    ]
+  },
+  "ending": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/ending",
+        "stream": true
+      }
+    ]
+  },
+  "warp": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/warp",
+        "stream": true
+      }
+    ]
+  },
+  "radio": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/radio",
+        "stream": true
+      }
+    ]
+  },
+  "whisper": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/whisper",
+        "stream": true
+      }
+    ]
+  },
+  "scrape": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/scrape",
+        "stream": true
+      }
+    ]
+  },
+  "breathing": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/breathing",
+        "stream": true
+      }
+    ]
+  },
+  "mannequin": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/mannequin",
+        "stream": true
+      }
+    ]
+  },
+  "alarm": {
+    "sounds": [
+      {
+        "name": "backrooms:ambient/alarm",
+        "stream": true
+      }
+    ]
+  }
+}

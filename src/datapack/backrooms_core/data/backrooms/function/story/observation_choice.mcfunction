@@ -1,0 +1,3 @@
+tellraw @s {text:'\nARCHIVE TERMINAL B-06',color:'aqua',bold:true}
+tellraw @s {text:'The terminal contains the survey team coordinates and years of observation records. One command will restore the transmitter; the other will erase the archive.',color:'gray'}
+tellraw @s [{text:'[RESTORE THE ARCHIVE]',color:'aqua',bold:true,click_event:{action:'run_command',command:'/trigger br_decision set 1'},hover_event:{action:'show_text',value:{text:'Broadcast the coordinates. Something outside may hear you.',color:'gray'}}},{text:'    '},{text:'[DESTROY THE ARCHIVE]',color:'red',bold:true,click_event:{action:'run_command',command:'/trigger br_decision set 2'},hover_event:{action:'show_text',value:{text:'Erase the index and sever the signal permanently.',color:'gray'}}}]

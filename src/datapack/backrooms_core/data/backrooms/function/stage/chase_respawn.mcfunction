@@ -1,0 +1,1 @@
+execute if entity @a[scores={br_stage=1}] unless entity @e[tag=br_bacteria] run summon minecraft:wither_skeleton 512.5 161 389.5 {Tags:['br_bacteria'],PersistenceRequired:1b,Silent:1b,CanPickUpLoot:0b,HandItems:[{},{}],ArmorItems:[{},{},{},{}]}

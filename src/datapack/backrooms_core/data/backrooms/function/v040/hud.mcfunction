@@ -1,0 +1,3 @@
+execute if score @s br_stage matches 0 if score @s br_fragments matches 3 if score @s br_radio matches 0 run title @s actionbar {text:'TASK  Calibrate the abandoned radio: ON · OFF · ON',color:'aqua'}
+execute if score @s br_stage matches 2 if score @s br_fuse matches 1 if score @s br_breakers matches ..1 run title @s actionbar [{text:'TASK  Restore both industrial breakers  ',color:'gold'},{score:{name:'@s',objective:'br_breakers'},color:'yellow'},{text:'/2',color:'dark_gray'}]
+execute if score @s br_stage matches 3 if score @s br_mannequin_awake matches 1 run title @s actionbar {text:'HAZARD  The observation mannequins are active',color:'dark_red',bold:true}
