@@ -22,3 +22,7 @@
 5. Run the standard build and validation commands without overrides before publishing.
 
 No `LICENSE-ASSETS` exists by design: creating one now would falsely imply rights that were not evidenced.
+
+## Metadata evidence
+
+The 2026-07-22 local audit found no PNG text metadata (`tEXt`, `zTXt`, or `iTXt`) in the resource-pack images. Every custom OGG contained only `Lavf61.7.100` / `Lavc61.19.101 libvorbis` encoder comments; none contained author, copyright, URL, source, or licence tags. Encoding metadata is not provenance and does not establish permission to distribute.
