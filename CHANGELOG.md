@@ -4,5 +4,5 @@
 
 - Extracted the data pack and resource pack into reproducible source locations.
 - Added a safe installer replacement, build tools, validation and checksum tooling.
-- Documented unresolved asset provenance and target-version mismatch as release blockers.
+- Recorded the owner's original-asset declaration and CC BY 4.0 asset licence; target-version migration remains the release blocker.
 - No public release, runtime claim or screenshot has been made.
