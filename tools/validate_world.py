@@ -53,7 +53,7 @@ def level_version_name(payload: bytes) -> str | None:
         return None
 
 
-def validate_world_directory(world: Path) -> list[str]:
+def validate_world_directory(world: Path, allow_version_mismatch: bool = False) -> list[str]:
     errors: list[str] = []
     if not (world / "level.dat").is_file():
         errors.append("missing level.dat")
@@ -136,14 +136,14 @@ def validate_world_directory(world: Path) -> list[str]:
         try:
             payload = gzip.decompress((world / "level.dat").read_bytes())
             version_name = level_version_name(payload)
-            if version_name != "1.21.5":
+            if version_name != "1.21.5" and not allow_version_mismatch:
                 errors.append(f"level.dat identifies version {version_name!r}, not target Java 1.21.5; client migration is unverified")
         except OSError:
             errors.append("level.dat is not readable gzip-compressed NBT")
     return errors
 
 
-def validate_release(archive_path: Path) -> list[str]:
+def validate_release(archive_path: Path, allow_version_mismatch: bool = False) -> list[str]:
     errors: list[str] = []
     try:
         with zipfile.ZipFile(archive_path) as archive:
@@ -156,7 +156,7 @@ def validate_release(archive_path: Path) -> list[str]:
                 errors.append("release ZIP has content outside the required world root")
             with tempfile.TemporaryDirectory(prefix="backrooms-validate-") as temp:
                 archive.extractall(temp)
-                errors.extend(validate_world_directory(Path(temp) / WORLD_NAME))
+                errors.extend(validate_world_directory(Path(temp) / WORLD_NAME, allow_version_mismatch))
     except zipfile.BadZipFile:
         errors.append("release ZIP is not a valid ZIP")
     return errors
@@ -165,12 +165,13 @@ def validate_release(archive_path: Path) -> list[str]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("path", nargs="?", type=Path, default=ROOT / "dist" / ARCHIVE_NAME)
+    parser.add_argument("--allow-version-mismatch", action="store_true", help="RC review only; reports no target-version claim")
     args = parser.parse_args()
-    errors = validate_release(args.path) if args.path.suffix.lower() == ".zip" else validate_world_directory(args.path)
+    errors = validate_release(args.path, args.allow_version_mismatch) if args.path.suffix.lower() == ".zip" else validate_world_directory(args.path, args.allow_version_mismatch)
     if errors:
         print("VALIDATION FAILED", *[f"\n- {error}" for error in errors], file=sys.stderr)
         return 1
-    print("VALIDATION PASSED")
+    print("VALIDATION PASSED WITH KNOWN VERSION MISMATCH" if args.allow_version_mismatch else "VALIDATION PASSED")
     return 0
 
 

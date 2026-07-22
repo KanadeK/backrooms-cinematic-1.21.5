@@ -1,12 +1,12 @@
 # Backrooms Cinematic for Minecraft Java 1.21.5
 
-> **Publication draft — not released.** The project owner has confirmed that the included project assets are original and has licensed them. Public release is still paused because `level.dat` reports Minecraft 1.14.4 and has not been migrated and tested in the target 1.21.5 client.
+> **v0.5.2-rc1 pre-release.** The downloadable package is a migration candidate, not a stable Java 1.21.5 release. `level.dat` reports Minecraft 1.14.4 and has not completed an official-server migration or client verification in Java 1.21.5.
 
 A cinematic Backrooms horror-adventure map intended for Minecraft Java Edition 1.21.5. Static review confirms a large Level 0 maze, chase sequence, industrial area, observation room, pipes, player-scoped objectives and several ending branches. It also detects environmental events and entity encounters in the data pack. A full client playthrough and multi-client test have **not** been completed.
 
 ## Current release status
 
-There is no Release download yet. The original project ZIP has been preserved outside this repository. A public release is blocked until the world is migrated and tested in Java 1.21.5.
+Download the complete `v0.5.2-rc1` migration-candidate package from **Releases**. The original project ZIP has been preserved outside this repository. Do not treat this RC as evidence of completed Java 1.21.5 server migration, client rendering, story completion, or multiplayer testing.
 
 When a release exists, download the complete integrated ZIP from **Releases**. Do not use GitHub's automatically generated `Source code.zip` as a game save.
 
@@ -41,11 +41,19 @@ python tools/validate_world.py
 python tools/verify_release.py dist/Backrooms_Java_1.21.5_v0.5.2_Integrated.zip
 ```
 
-The default build currently stops with a release-blocker error because the world still needs target-client migration evidence. That is intentional. For a **private audit only**, use the explicit version override; it does not make an untested release safe:
+The default build stops with a release-blocker error because the world still needs target-client migration evidence. That is intentional. The RC package was built with the explicit version override and remains unverified for target-client migration:
 
 ```bash
 python tools/build_release.py --allow-version-mismatch
 ```
+
+## Known RC limitations
+
+- `level.dat`: DataVersion 1976 / Version.Name `1.14.4`; the data and resource packs target 1.21.5 formats but migration was not executed in this repository.
+- Client rendering: not tested here.
+- Complete story playthrough: not tested here.
+- Multiplayer playthrough: not tested here.
+- Performance and frame rate: not tested here.
 
 ## Screenshots
 
